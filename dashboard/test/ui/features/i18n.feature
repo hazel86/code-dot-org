@@ -31,6 +31,19 @@ Scenario: Minecraft:Agent tutorial in Spanish
   Given I am on "http://studio.code.org/reset_session/lang/en"
   And I wait for 2 seconds
 
+Scenario: Translated function names in Spanish
+  Given I am on "http://studio.code.org/s/allthethings/stage/3/puzzle/3/lang/es"
+  And I rotate to landscape
+  And I wait for the page to fully load
+  # Toolbox call block is translated
+  Then element "[block-id=6] .blocklyText" has "es" text from key "data.function_name.draw a square"
+  # Workspace call block is translated
+  And element "[block-id=28] .blocklyText" has "es" text from key "data.function_name.draw a square"
+  # Workspace definition block is translated
+  And element ""[block-id=29] > .blocklyNonEditableText > .blocklyText"" has "es" text from key "data.function_name.draw a square"
+  Given I am on "http://studio.code.org/reset_session/lang/en"
+  And I wait for 2 seconds
+
 Scenario: HoC tutorial in Portuguese
   Given I am on "http://studio.code.org/hoc/15/lang/pt-br"
   And I rotate to landscape
@@ -59,7 +72,20 @@ Scenario: Minecraft:Agent tutorial in Portuguese
   And I rotate to landscape
   And I wait for the page to fully load
   Then element ".csf-top-instructions p" has "pt-BR" text from key "data.instructions.MC_HOC_2017_01_RETRY_instruction"
-  Given I am on "http://studio.code.org/reset_session/lang/pt-BR"
+  Given I am on "http://studio.code.org/reset_session/lang/en"
+  And I wait for 2 seconds
+
+Scenario: Translated function names in Portuguese
+  Given I am on "http://studio.code.org/s/allthethings/stage/3/puzzle/3/lang/pt-BR"
+  And I rotate to landscape
+  And I wait for the page to fully load
+  # Toolbox call block is translated
+  Then element "[block-id=6] .blocklyText" has "pt-BR" text from key "data.function_name.draw a square"
+  # Workspace call block is translated
+  And element "[block-id=28] .blocklyText" has "pt-BR" text from key "data.function_name.draw a square"
+  # Workspace definition block is translated
+  And element ""[block-id=29] > .blocklyNonEditableText > .blocklyText"" has "pt-BR" text from key "data.function_name.draw a square"
+  Given I am on "http://studio.code.org/reset_session/lang/en"
   And I wait for 2 seconds
 
 Scenario: HoC tutorial in Arabic (RTL)
@@ -89,5 +115,18 @@ Scenario: Minecraft:Agent tutorial in Arabic (RTL)
   And I rotate to landscape
   And I wait for the page to fully load
   Then element ".csf-top-instructions p" has "ar-SA" text from key "data.instructions.MC_HOC_2017_01_RETRY_instruction"
+  Given I am on "http://studio.code.org/reset_session/lang/en"
+  And I wait for 2 seconds
+
+Scenario: Translated function names in Arabic
+  Given I am on "http://studio.code.org/s/allthethings/stage/3/puzzle/3/lang/ar-SA"
+  And I rotate to landscape
+  And I wait for the page to fully load
+  # Toolbox call block is translated
+  Then element "[block-id=6] .blocklyText" has "ar-SA" text from key "data.function_name.draw a square"
+  # Workspace call block is translated
+  And element "[block-id=28] .blocklyText" has "ar-SA" text from key "data.function_name.draw a square"
+  # Workspace definition block is translated
+  And element ""[block-id=29] > .blocklyNonEditableText > .blocklyText"" has "ar-SA" text from key "data.function_name.draw a square"
   Given I am on "http://studio.code.org/reset_session/lang/en"
   And I wait for 2 seconds
